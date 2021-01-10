@@ -38,9 +38,10 @@ func main() {
 	}
 	/// Map of misc files
 	miscFiles := map[string]string{
-		"zshrc":  homeDir + "/.zshrc",
-		"bashrc": homeDir + "/.bashrc",
-		"walls":  homeDir + "/wallpapers",
+		"zshrc":      homeDir + "/.zshrc",
+		"bashrc":     homeDir + "/.bashrc",
+		"walls":      homeDir + "/wallpapers",
+		"kde_backup": homeDir + "/kde_config.tar.gz",
 	}
 	for k := range miscFiles {
 		CopyDir(miscFiles[k], "./")
