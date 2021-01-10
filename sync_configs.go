@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"log"
+	"math/rand"
 	"os/exec"
 )
 
@@ -14,41 +15,38 @@ func CopyDir(src, dst string) error {
 	return cmd.Run()
 }
 
-// func pushToGit() {
-// 	val := exec.Command("git", "init")
-// 	val.Run()
-// 	nol := exec.Command("git", "add", ".")
-// 	nol.Run()
-// 	commit := exec.Command("git", "commit", "-m", fmt.Sprintf("%d", rand.Intn(100000)))
-// 	commit.Run()
-// 	all := exec.Command("git", "push", "origin", "master")
-// 	all.Run()
-
-// }
+func pushToGit() {
+	val := exec.Command("git", "init")
+	val.Run()
+	nol := exec.Command("git", "add", ".")
+	nol.Run()
+	commit := exec.Command("git", "commit", "-m", fmt.Sprintf("%d", rand.Intn(100000)))
+	commit.Run()
+	all := exec.Command("git", "push", "origin", "master")
+	all.Run()
+}
 func main() {
-	var mainDir = "~/.config"
+	/// Home Directory
+	var homeDir = "/home/navin"
+	var configDir = homeDir + "/.config"
+	/// Map of config files
 	configs := map[string]string{
-		"alacritty": mainDir + "/alacritty",
-		"dunst":     mainDir + "/dunst",
-		"polybar":   mainDir + "/polybar",
-		"i3":        mainDir + "/i3",
+		"alacritty": configDir + "/alacritty",
+		"dunst":     configDir + "/dunst",
+		"polybar":   configDir + "/polybar",
+		"i3":        configDir + "/i3",
 	}
+	/// Map of misc files
 	miscFiles := map[string]string{
-		"zshrc":  "~/.zshrc",
-		"bashrc": "~/.bashrc",
-		"walls":  "~/wallpapers",
+		"zshrc":  homeDir + "/.zshrc",
+		"bashrc": homeDir + "/.bashrc",
+		"walls":  homeDir + "/wallpapers",
 	}
-
-	// for j := 0; j < len(configFiles); j++ {
-
-	// }
-
 	for k := range miscFiles {
 		CopyDir(miscFiles[k], "./")
 	}
 	for k := range configs {
 		CopyDir(configs[k], "./.config/")
-		fmt.Printf("key[%s] value[%s]\n", k, configs[k])
 	}
-	// pushToGit()
+	pushToGit()
 }
