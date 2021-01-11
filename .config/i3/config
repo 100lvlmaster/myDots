@@ -419,10 +419,10 @@ exec_always --no-startup-id autotiling
 for_window [class="Vivaldi-stable"] focus
 
 #Dead notification center
-exec --no-startup-id deadd-notification-center
+# exec --no-startup-id deadd-notification-center
 
 #Dunst 
-# exec_always dunst
+exec_always dunst
 
 
 #text-editor
@@ -828,17 +828,9 @@ gaps inner 5
 gaps outer 2
 #smart_gaps on
 smart_borders on
-
-
-
-
-
 #####################################################################################################################
 #################                          i3 gaps change                                           #################
 #####################################################################################################################
-
-
-
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
