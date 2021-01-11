@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"log"
-	"math/rand"
 	"os/exec"
+	"time"
 )
 
 //CopyDir will copy files to this dir
@@ -20,7 +20,7 @@ func pushToGit() {
 	val.Run()
 	nol := exec.Command("git", "add", ".")
 	nol.Run()
-	commit := exec.Command("git", "commit", "-m", fmt.Sprintf("%d", rand.Intn(100000)))
+	commit := exec.Command("git", "commit", "-m", fmt.Sprintf("%d",time.Unix(time.Now().Unix(),0)))
 	commit.Run()
 	all := exec.Command("git", "push", "origin", "master")
 	all.Run()
