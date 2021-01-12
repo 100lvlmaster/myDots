@@ -414,8 +414,12 @@ exec_always --no-startup-id autotiling
 #Dead notification center
 # exec --no-startup-id deadd-notification-center
 
+
+
 #Dunst 
 exec_always dunst
+
+
 
 #Set wallaper 
 exec --no-startup-id feh --bg-scale ~/wallpapers/bg.png
@@ -442,8 +446,7 @@ exec --no-startup-id volumeicon
 #exec --no-startup-id feh --bg-fill /usr/share/backgrounds/arcolinux/arco-wallpaper.jpg &
 
 #Polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh --shades
-
+exec_always --no-startup-id ~/.config/polybar/launch.sh 
 #####################################################################################################################
 #################                                 system applications                               #################
 #####################################################################################################################
@@ -459,7 +462,7 @@ exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 #####################################################################################################################
 
 #not workspace related
-
+bindsym $mod+period exec --no-startup-id emoji-picker
 
 # terminal
 bindsym $mod+Return exec --no-startup-id alacritty;focus
@@ -572,6 +575,8 @@ for_window [class="^Gpick$"] floating enable
 for_window [class="Hexchat"] floating disable
 for_window [class="Imagewriter"] floating enable
 for_window [class="Font-manager"] floating enable
+# Emoji Picker
+for_window [class="Emoji Picker"] floating enable
 #for_window [class="qt5ct|Lxappearance] floating enable
 for_window [class="Nitrogen"] floating disable
 for_window [class="Pavucontrol"] floating disable
@@ -693,7 +698,7 @@ popup_during_fullscreen smart
 
 
  for_window [class="^.*"] border pixel 1
- for_window [class="^.*"] border radius 0
+ for_window [class="^.*"] border_radius 0
 
 gaps inner 5
 gaps outer 2

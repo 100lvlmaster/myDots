@@ -12,4 +12,4 @@ launch_bar() {
 
 	polybar -r main -c "$dir/shades/config.ini" &	
 }
-
+launch_bar
