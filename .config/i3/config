@@ -358,15 +358,23 @@ font pango:Noto Mono Regular 13
 
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
-
+assign [class="Notion"]                                 → 1
+exec --no-startup-id notion-app
 # Workspace 1 browser related
-assign [class="Firefox"]                      → 1
+assign [class="Firefox"]                      → 2
 #assign [class="Chromium|Google-chrome"]                                             → 1
 exec --no-startup-id firefox
+for_window [class="Spotify"] move to workspace 7
+
 # Workspace 2 text editor related
 #assign [class="sublime-text|sublime_text|Sublime_text|subl|Subl|subl3|Subl3"]       → 2
-#assign [class="Xed|xed|Brackets|Atom|Code|Geany"]                                   → 2
+#assign [class="Xed|xed|Brackets|Atom|Code|Geany"]
 
+
+assign [class="Spotify"]                      → 7
+#assign [class="Chromium|Google-chrome"]                                             → 1
+exec --no-startup-id env LD_PRELOAD=/usr/lib/spotify-adblock.so spotify %U
+for_window [class="Spotify"] move to workspace 7
 # Workspace 3 Inkscape
 #assign [class="Inkscape"]                                                           → 3
 
@@ -393,7 +401,7 @@ exec --no-startup-id firefox
 # Workspace 10 music related
 #assign [class="Spotify|spotify"]                                                    → 10
 #fix for spotify not moving to workspace 10
-#for_window [class="Spotify"] move to workspace 10
+
 
 
 
@@ -422,7 +430,7 @@ exec_always dunst
 
 
 #Set wallaper 
-exec --no-startup-id feh --bg-scale ~/wallpapers/bg.png
+exec --no-startup-id feh --bg-scale ~/wallpapers/BSD_wallpaper.jpg
 
 #polybar rofi
 bindsym $mod+space exec --no-startup-id ~/.config/polybar/shades/scripts/launcher.sh & toggle
