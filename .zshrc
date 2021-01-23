@@ -6,4 +6,5 @@ alias fl='cd ~/Docs/flutter/'
 alias nextdir='cd ~/Docs/react/nextjs/'
 alias connect='adb connect 192.168.0.110:5555'
 alias i3config='code ~/.config/i3/ && exit'
+alias vcode='vscodium .'
 export TERMINAL="/usr/bin/alacritty"

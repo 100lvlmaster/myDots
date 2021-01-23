@@ -358,12 +358,10 @@ font pango:Noto Mono Regular 13
 
 # Assign application to start on a specific workspace
 # you can find the class with the program xprop
-assign [class="Notion"]                                 → 1
-exec --no-startup-id notion-app
 # Workspace 1 browser related
 assign [class="Firefox"]                      → 2
 #assign [class="Chromium|Google-chrome"]                                             → 1
-exec --no-startup-id firefox
+exec --no-startup-id brave
 for_window [class="Spotify"] move to workspace 7
 
 # Workspace 2 text editor related
@@ -438,7 +436,13 @@ bindsym $mod+space exec --no-startup-id ~/.config/polybar/shades/scripts/launche
 # TRAY APPLICATIONS
 #Authentication dialog
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+# KGP
+##POLKIT
 
+exec --no-startup-id /usr/lib/polkit-1
+exec --no-startup-id /usr/lib/polkit-kde-authentication-agent-1
+exec --no-startup-id /usr/lib/polkit-gnome
+exec --no-startup-id kgpg %U
 # Updater
 exec --no-startup-id pamac-tray
 
@@ -584,6 +588,8 @@ for_window [class="Hexchat"] floating disable
 for_window [class="Imagewriter"] floating enable
 for_window [class="Font-manager"] floating enable
 # Emoji Picker
+for_window [class="Dolphin"] floating enable
+
 for_window [class="Emoji Picker"] floating enable
 #for_window [class="qt5ct|Lxappearance] floating enable
 for_window [class="Nitrogen"] floating disable
