@@ -589,6 +589,7 @@ for_window [class="Imagewriter"] floating enable
 for_window [class="Font-manager"] floating enable
 # Emoji Picker
 for_window [class="Dolphin"] floating enable
+for_window [class="Files"] floating enable
 
 for_window [class="Emoji Picker"] floating enable
 #for_window [class="qt5ct|Lxappearance] floating enable
@@ -715,7 +716,7 @@ popup_during_fullscreen smart
  for_window [class="^.*"] border_radius 0
 
 gaps inner 5
-gaps outer 2
+gaps outer 0
 #smart_gaps on
 smart_borders on
 #####################################################################################################################
